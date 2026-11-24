@@ -1,0 +1,16 @@
+{
+  "version": "v1",
+  "hooks": [
+    {
+      "name": "guard-submission-files",
+      "description": "When .gitignore or LICENSE is saved, check that .kiro is still tracked and a license exists (hackathon disqualification rules).",
+      "trigger": "PostFileSave",
+      "matcher": "(^|/)(\\.gitignore|LICENSE)$",
+      "action": {
+        "type": "command",
+        "command": "node scripts/check-submission.mjs >&2"
+      },
+      "timeout": 30
+    }
+  ]
+}
