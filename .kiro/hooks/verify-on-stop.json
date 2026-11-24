@@ -1,0 +1,15 @@
+{
+  "version": "v1",
+  "hooks": [
+    {
+      "name": "verify-before-finishing",
+      "description": "When the agent finishes a turn, run lint, typecheck, tests and the submission checks. If anything fails, the agent keeps working and sees the error.",
+      "trigger": "Stop",
+      "action": {
+        "type": "command",
+        "command": "[ -d node_modules ] || exit 0; out=$(npm run check --silent 2>&1 && npm run check:submission --silent 2>&1) || { printf '%s\\n' \"$out\" >&2; exit 1; }"
+      },
+      "timeout": 240
+    }
+  ]
+}

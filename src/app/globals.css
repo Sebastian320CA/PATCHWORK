@@ -1,0 +1,14 @@
+@import "tailwindcss";
+
+@theme inline {
+  --font-sans: ui-sans-serif, system-ui, "Segoe UI", Roboto, sans-serif;
+  --font-serif: ui-serif, Georgia, "Times New Roman", serif;
+  --color-ink: #0d0b09;
+  --color-parchment: #e9dcc0;
+  --color-ember: #d97a2b;
+}
+
+body {
+  background: var(--color-ink);
+  color: var(--color-parchment);
+}
